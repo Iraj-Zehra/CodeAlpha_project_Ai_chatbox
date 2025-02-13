@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Function to generate chatbot responses
+string getResponse(string input) {
+    if (input == "hello" || input == "hi")
+        return "Hello! How can I assist you today?";
+    else if (input == "how are you")
+        return "I'm just a bot, but I'm doing great! How about you?";
+    else if (input == "what is your name")
+        return "I am a simple AI chatbot built in C++.";
+    else if (input == "bye")
+        return "Goodbye! Have a great day!";
+    else
+        return "I'm sorry, I don't understand that.";
+}
+
+int main() {
+    string userInput;
+    cout << "Welcome to AI Chatbot! (Type 'bye' to exit)\n";
+
+    while (true) {
+        cout << "You: ";
+        getline(cin, userInput);
+
+        if (userInput == "bye") {
+            cout << "Chatbot: " << getResponse(userInput) << endl;
+            break;
+        }
+
+        cout << "Chatbot: " << getResponse(userInput) << endl;
+    }
+
+    return 0;
+}
